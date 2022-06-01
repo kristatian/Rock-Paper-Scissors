@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -12,14 +12,36 @@
         function computerPlay () {
             let rand = Math.floor(Math.random() * 100);
 
+            //console.log(rand);
+
             if (rand >= 0 && rand < 33) {
-                console.log("Rock");
+                return "Rock";
             } else if (rand >= 33 && rand < 66) {
-                console.log("Paper");
+                return "Paper";
             } else {
-                console.log("Scissors");
+                return "Scissors";
             }
         }
+
+        function playGame (playerSelection, computerSelection) {
+            if (playerSelection.toUpperCase() == "ROCK" && computerSelection.toUpperCase() == "PAPER") {
+                console.log("You Lose! Paper beats Rock");
+            } else if (playerSelection.toUpperCase() == "ROCK" && computerSelection.toUpperCase() == "SCISSORS") {
+                console.log("You Win! Rock beats Scissors");
+            } else if (playerSelection.toUpperCase() == "SCISSORS" && computerSelection.toUpperCase() == "PAPER") {
+                console.log("You Win! Scissors beats Paper");
+            } else if (playerSelection.toUpperCase() == "SCISSORS" && computerSelection.toUpperCase() == "ROCK") {
+                console.log("You Lose! Rock beats Scissors");
+            } else if (playerSelection.toUpperCase() == "PAPER" && computerSelection.toUpperCase() == "ROCK") {
+                console.log("You Win! Paper beats Rock");
+            } else if (playerSelection.toUpperCase() == "PAPER" && computerSelection.toUpperCase() == "SCISSORS") {
+                console.log("You Lose! Paper beats Scissors");
+            } else {
+                console.log("It's a Tie!");
+            }
+        }
+
+        computerPlay();
 
     </script>
 </body>
